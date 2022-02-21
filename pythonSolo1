@@ -1,0 +1,14 @@
+import pandas as pd
+import sklearn 
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression()
+n = int(input())
+X = []
+for i in range(n):
+  X.append([float(x) for x in input().split()])
+
+datapoint = [float(x) for x in input().split()]
+y = [int(x) for x in input().split()]
+for i in range(n):
+	model.fit(X, datapoint)
+print(int(model.predict([y])[0]))
